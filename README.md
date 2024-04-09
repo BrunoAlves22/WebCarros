@@ -1,6 +1,6 @@
 # WebCarros - Site de Vendas de Carros
 
-Este é um projeto desenvolvido utilizando React, TypeScript e Vite, destinado a servir como um site de vendas de carros online. Ele oferece diversas funcionalidades para gerenciar carros cadastrados, incluindo sistema de login, cadastro, edição, exclusão e busca de carros.
+Este é um projeto desenvolvido utilizando React, TypeScript, Vite e Tailwind, destinado a servir como um site de vendas de carros online. Ele oferece diversas funcionalidades para gerenciar carros cadastrados, incluindo sistema de login, cadastro, edição, exclusão e busca de carros.
 
 ## Funcionalidades
 
