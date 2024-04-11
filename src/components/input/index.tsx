@@ -36,7 +36,7 @@ export function Input({
 
       <div
         className={`absolute right-2 top-1/2 transform -translate-y-1/2  ${
-          error ? "absolute -bottom-[10%] " : ""
+          error ? "absolute -bottom-[16%] " : ""
         }`}
       >
         {icon}
