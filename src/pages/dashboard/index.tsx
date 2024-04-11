@@ -1,12 +1,12 @@
-import { useEffect, useState, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Container } from "../../components/container";
 import { DashboardHeader } from "../../components/dashboard-header";
 
-import { FiTrash2, FiEdit2 } from "react-icons/fi";
-import { collection, getDocs, query, where, doc, deleteDoc } from "firebase/firestore";
-import { db, storage } from "../../services/firebaseConnection";
-import { ref, deleteObject } from "firebase/storage";
+import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
+import { deleteObject, ref } from "firebase/storage";
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { AuthContext } from "../../context/AuthContext";
+import { db, storage } from "../../services/firebaseConnection";
 
 import { Link } from "react-router-dom";
 

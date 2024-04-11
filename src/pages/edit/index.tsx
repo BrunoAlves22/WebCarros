@@ -1,19 +1,19 @@
-import { ChangeEvent, useEffect, useState, useContext } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Container } from "../../components/container";
-import { db, storage } from "../../services/firebaseConnection";
-import { AuthContext } from "../../context/AuthContext";
 import { Input } from "../../components/input";
+import { AuthContext } from "../../context/AuthContext";
+import { db, storage } from "../../services/firebaseConnection";
 
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { deleteObject, getDownloadURL, ref as storageRef, uploadBytes } from "firebase/storage";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 import { useForm } from "react-hook-form";
-import { FiTrash2, FiUpload } from "react-icons/fi";
 import toast from "react-hot-toast";
+import { FiTrash2, FiUpload } from "react-icons/fi";
 import { v4 as uuidV4 } from "uuid";
 
 const schema = z.object({

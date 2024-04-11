@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
+import { Link } from "react-router-dom";
 import { auth } from "../../services/firebaseConnection";
 
 export function DashboardHeader() {

@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { Container } from "../../components/container";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Container } from "../../components/container";
 
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
-import { collection, query, getDocs, orderBy, where } from "firebase/firestore";
 
 interface CarsProps {
   id: string;

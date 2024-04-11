@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { Container } from "../../components/container";
+import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
+import { Container } from "../../components/container";
 
-import { getDoc, doc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import { Dashboard } from "./pages/dashboard";
+import { New } from "./pages/dashboard/new";
+import { Detail } from "./pages/detail";
+import { Edit } from "./pages/edit";
 import { Home } from "./pages/home";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
-import { Detail } from "./pages/detail";
-import { Dashboard } from "./pages/dashboard";
-import { New } from "./pages/dashboard/new";
-import { Edit } from "./pages/edit";
 
 import { Layout } from "./components/layout";
 import { Private } from "./routes/Private";

@@ -1,18 +1,18 @@
-import { ChangeEvent, useState, useContext } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import { Container } from "../../../components/container";
 import { DashboardHeader } from "../../../components/dashboard-header";
 
-import { FiTrash2, FiUpload } from "react-icons/fi";
-import { useForm } from "react-hook-form";
-import { Input } from "../../../components/input";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { v4 as uuidV4 } from "uuid";
-import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
+import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { useForm } from "react-hook-form";
+import { FiTrash2, FiUpload } from "react-icons/fi";
+import { v4 as uuidV4 } from "uuid";
+import { z } from "zod";
+import { Input } from "../../../components/input";
 
-import { storage, db } from "../../../services/firebaseConnection";
 import { AuthContext } from "../../../context/AuthContext";
+import { db, storage } from "../../../services/firebaseConnection";
 
 import toast from "react-hot-toast";
 

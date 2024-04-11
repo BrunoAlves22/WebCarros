@@ -1,6 +1,6 @@
 import { useContext } from "react";
+import { FiLogIn, FiUser } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { FiUser, FiLogIn } from "react-icons/fi";
 
 import logoImg from "../../assets/logo.svg";
 import { AuthContext } from "../../context/AuthContext";
