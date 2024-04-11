@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { Container } from "../../components/container";
@@ -34,7 +34,10 @@ export function Detail() {
   const { id } = useParams();
   const [cars, setCars] = useState<CarProps>();
   const [sliderPerView, setSliderPerView] = useState<number>(3);
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function loadCar() {
@@ -86,6 +89,8 @@ export function Detail() {
     };
   }, []);
 
+  useEffect(() => {}, []);
+
   return (
     <Container>
       {cars && (
@@ -133,8 +138,21 @@ export function Detail() {
             </div>
           </div>
 
-          <strong>Descrição</strong>
-          <p className="mb-4">{cars?.description}</p>
+          <div className="flex flex-col justify-center">
+            <strong>Descrição</strong>
+            <p ref={ref} className={`mb-2 ${isOpen ? null : "line-clamp-3 overflow-hidden"}`}>
+              {cars?.description}
+            </p>
+
+            {cars?.description.length > 200 && (
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="rounded-full font-semibold p-1.5 mb-2 hover:bg-gray-300 transition-colors"
+              >
+                {isOpen ? "Ver menos" : "Ver mais"}
+              </button>
+            )}
+          </div>
 
           <strong>Contato</strong>
           <div className="flex flex-col justify-center gap-4 py-2 w-32">
