@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { Container } from "../../components/container";
+import { currencyMask } from "../../masks/currencymask";
 
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
@@ -112,7 +113,7 @@ export function Detail() {
         <main className="w-full bg-white rounded-lg p-6 my-4">
           <div className="flex flex-col mb-4 items-center justify-between sm:flex-row">
             <h1 className="font-bold text-3xl text-black">{cars?.name}</h1>
-            <h1 className="font-bold text-3xl text-black">R$ {cars?.price}</h1>
+            <h1 className="font-bold text-3xl text-black">{currencyMask(Number(cars?.price))}</h1>
           </div>
 
           <p>{cars?.model}</p>

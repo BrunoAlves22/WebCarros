@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "../../components/container";
+import { currencyMask } from "../../masks/currencymask";
 
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
@@ -137,7 +138,9 @@ export function Home() {
                 <span className="text-zinc-700 mb-6">
                   Ano {car.year} | {car.km} KM
                 </span>
-                <strong className="text-black font-medium text-xl">R$ {car.price}</strong>
+                <strong className="text-black font-medium text-xl">
+                  {currencyMask(Number(car.price))}
+                </strong>
               </div>
 
               <div className="w-full h-px bg-slate-200 my-2"></div>

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Container } from "../../components/container";
 import { DashboardHeader } from "../../components/dashboard-header";
+import { currencyMask } from "../../masks/currencymask";
 
 import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
@@ -126,7 +127,10 @@ export function Dashboard() {
               <span className="text-zinc-700 my-4">
                 Ano {car.year} | {car.km} KM
               </span>
-              <strong className="text-black font-medium text-xl">R$ {car.price}</strong>
+              <strong className="text-black font-medium text-xl">
+                {" "}
+                {currencyMask(Number(car.price))}
+              </strong>
             </div>
 
             <div className="w-full h-px bg-slate-200 my-2" />
