@@ -1,6 +1,7 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Container } from "../../components/container";
 import { Input } from "../../components/input";
+import { phoneMask } from "../../masks/phonemask";
 import { AuthContext } from "../../context/AuthContext";
 import { db, storage } from "../../services/firebaseConnection";
 
@@ -20,12 +21,7 @@ const schema = z.object({
   km: z.string().min(1, { message: "O KM do carro é obrigatório" }),
   price: z.string().min(1, { message: "O preço é obrigatório" }),
   city: z.string().min(1, { message: "A cidade é obrigatória" }),
-  whatsapp: z
-    .string()
-    .min(1, { message: "O telefone é obrigatório" })
-    .refine((value) => /^(\d{11,12})$/.test(value), {
-      message: "Número de telefone inválido",
-    }),
+  whatsapp: z.string().min(1, { message: "O telefone é obrigatório" }),
   description: z.string().min(1, { message: "A descrição é obrigatória" }),
 });
 
@@ -73,11 +69,19 @@ export function Edit() {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
+    watch,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     mode: "onChange",
     criteriaMode: "all",
   });
+
+  const watchPhone = watch("whatsapp");
+
+  useEffect(() => {
+    setValue("whatsapp", phoneMask(watchPhone));
+  }, [watchPhone, setValue]);
 
   useEffect(() => {
     async function loadCar() {
@@ -305,6 +309,7 @@ export function Edit() {
                 error={errors.whatsapp?.message}
                 placeholder="Ex: 12 99988-7777..."
                 disabled={disabledInput}
+                length={15}
               />
             </label>
 

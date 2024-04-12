@@ -1,6 +1,7 @@
-import { ChangeEvent, useState, useContext } from "react";
+import { ChangeEvent, useState, useContext, useEffect } from "react";
 import { Container } from "../../../components/container";
 import { DashboardHeader } from "../../../components/dashboard-header";
+import { phoneMask } from "../../../masks/phonemask";
 
 import { FiTrash2, FiUpload } from "react-icons/fi";
 import { useForm } from "react-hook-form";
@@ -23,12 +24,7 @@ const schema = z.object({
   km: z.string().min(1, "O KM do carro é obrigatório"),
   price: z.string().min(1, "O preço é obrigatório"),
   city: z.string().min(1, "A cidade é obrigatória"),
-  whatsapp: z
-    .string()
-    .min(1, "O telefone é obrigatório")
-    .refine((value) => /^(\d{11,12})$/.test(value), {
-      message: "Número de telefone inválido",
-    }),
+  whatsapp: z.string().min(1, "O telefone é obrigatório"),
   description: z.string().min(1, "A descrição é obrigatória"),
 });
 
@@ -50,11 +46,19 @@ export function New() {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
+    watch,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     mode: "onChange",
     criteriaMode: "all",
   });
+
+  const watchPhone = watch("whatsapp");
+
+  useEffect(() => {
+    setValue("whatsapp", phoneMask(watchPhone));
+  }, [watchPhone, setValue]);
 
   async function handleFile(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.files && e.target.files[0]) {
@@ -252,6 +256,7 @@ export function New() {
                 name="whatsapp"
                 error={errors.whatsapp?.message}
                 placeholder="Ex: 12 99988-7777..."
+                length={15}
               />
             </label>
 

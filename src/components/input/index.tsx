@@ -11,6 +11,7 @@ interface InputProps {
   rules?: RegisterOptions;
   icon?: ReactNode;
   disabled?: boolean;
+  length?: number;
 }
 
 export function Input({
@@ -22,6 +23,7 @@ export function Input({
   error,
   icon,
   disabled,
+  length,
 }: InputProps) {
   return (
     <div className="relative">
@@ -32,6 +34,7 @@ export function Input({
         {...register(name, rules)}
         id={name}
         disabled={disabled}
+        maxLength={length}
       />
 
       <div
