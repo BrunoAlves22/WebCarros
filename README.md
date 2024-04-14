@@ -25,9 +25,9 @@ Este é um projeto destinado a servir como um site de vendas de carros online. E
 
 ## Web Carros
 
-![screenshot projeto carweb 5](https://github.com/BrunoAlves22/WebCarros/assets/98662401/7b397eb5-5d2f-4a54-abb4-bc45c710b7c6) ![screenshot projeto carweb](https://github.com/BrunoAlves22/WebCarros/assets/98662401/6ff7b4ea-058e-4832-91ed-a2305d54bd88)
-![screenshot projeto carweb 2](https://github.com/BrunoAlves22/WebCarros/assets/98662401/a4948048-4cb0-4420-86c1-05462d156b67) ![screenshot projeto carweb 3](https://github.com/BrunoAlves22/WebCarros/assets/98662401/b2a5e2d0-0195-4995-a547-b87cf3eaca1d)
-![screenshot projeto carweb 4](https://github.com/BrunoAlves22/WebCarros/assets/98662401/4e042a09-d429-4ff9-bbce-388cb10b5c49)
+ ![screenshot projeto carweb](https://github.com/BrunoAlves22/WebCarros/assets/98662401/6ff7b4ea-058e-4832-91ed-a2305d54bd88)
+
+
 
 
 
