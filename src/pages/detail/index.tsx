@@ -90,8 +90,6 @@ export function Detail() {
     };
   }, []);
 
-  useEffect(() => {}, []);
-
   return (
     <Container>
       {cars && (
