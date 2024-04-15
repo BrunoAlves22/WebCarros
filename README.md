@@ -23,10 +23,22 @@ Este é um projeto destinado a servir como um site de vendas de carros online. E
 
 - **Banco de Dados feito com Firebase:** Utiliza o Firebase como banco de dados para armazenar e gerenciar os dados dos carros cadastrados.
 
+## Páginas
+
+- **Home**
+- **Detalhes**
+- **Login**
+- **Edição**
+- **Cadastro**
+- **Dashboard**
+
+
 ## Web Carros
 
- ![screenshot projeto carweb](https://github.com/BrunoAlves22/WebCarros/assets/98662401/6ff7b4ea-058e-4832-91ed-a2305d54bd88)
-
+![screenshot projeto carweb](https://github.com/BrunoAlves22/WebCarros/assets/98662401/6ff7b4ea-058e-4832-91ed-a2305d54bd88)
+ 
+## Repositório 
+![WebCarrosApp](https://github.com/BrunoAlves22/WebCarrosApp)
 
 
 
