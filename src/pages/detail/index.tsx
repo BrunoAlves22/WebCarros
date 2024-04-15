@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { Container } from "../../components/container";
@@ -37,8 +37,6 @@ export function Detail() {
   const [sliderPerView, setSliderPerView] = useState<number>(3);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-
-  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     async function loadCar() {
@@ -139,7 +137,7 @@ export function Detail() {
 
           <div className="flex flex-col justify-center">
             <strong>Descrição</strong>
-            <p ref={ref} className={`mb-2 ${isOpen ? null : "line-clamp-3 overflow-hidden"}`}>
+            <p className={`mb-2 ${isOpen ? null : "line-clamp-3 overflow-hidden"}`}>
               {cars?.description}
             </p>
 
