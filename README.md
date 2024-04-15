@@ -23,20 +23,11 @@ Este é um projeto destinado a servir como um site de vendas de carros online. E
 
 - **Banco de Dados feito com Firebase:** Utiliza o Firebase como banco de dados para armazenar e gerenciar os dados dos carros cadastrados.
 
-## Como Utilizar
+## Web Carros
 
-1. **Instalação das Dependências:**
-    Execute `npm install` para instalar todas as dependências necessárias do projeto.
+ ![screenshot projeto carweb](https://github.com/BrunoAlves22/WebCarros/assets/98662401/6ff7b4ea-058e-4832-91ed-a2305d54bd88)
 
-2. **Configuração do Firebase:**
-    - Configure o Firebase criando um projeto e obtendo as credenciais necessárias.
-    - Insira as informações de configuração do Firebase no arquivo `firebaseConfig.ts`.
 
-3. **Execução do Projeto:**
-    Execute `npm start` para iniciar o servidor de desenvolvimento.
-
-4. **Acesso ao Sistema:**
-    Acesse a aplicação através do navegador utilizando o endereço fornecido pelo servidor de desenvolvimento.
 
 
 
